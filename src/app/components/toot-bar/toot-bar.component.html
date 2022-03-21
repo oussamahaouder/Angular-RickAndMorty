@@ -1,0 +1,18 @@
+<p>
+<mat-toolbar color="primary">
+    <button mat-button class="exemple-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+        <mat-menu #menu ="matMenu"> 
+            <button mat-menu-item [routerLink]="['/add']" >Movies</button>
+            <button mat-menu-item [routerLink]="['/search']">Search Caracter</button>
+        </mat-menu>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-toolbar color="primary" [routerLink]="['/']" > 
+        <mat-icon>home</mat-icon>
+        <h1>Movies</h1>
+    </mat-toolbar>
+    
+
+    
+</mat-toolbar>
+</p>

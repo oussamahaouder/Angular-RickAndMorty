@@ -1,0 +1,25 @@
+<div class="home" >
+<mat-card *ngFor="let i of resultat ; let index = index" >
+    <mat-card-header>
+   <mat-card-title>
+    {{i.name}}
+   </mat-card-title>
+   <mat-card-subtitle>
+    {{i.status}}
+   </mat-card-subtitle>
+</mat-card-header>
+   <mat-card-content>
+       <img mat-card-image src="{{i.image}}" style="background-size: cover;">
+   
+   </mat-card-content>
+   <mat-card-actions>
+      <button mat-button [ngClass]="{'green' : likedOrNot  }" (click)="Onlike(index)" >Like</button>
+      <button mat-button (click)="onUnlike(index)" [ngClass]="{'red' : likedOrNot == false}">Down</button>
+      
+      
+   </mat-card-actions>
+
+   
+</mat-card>
+</div>
+

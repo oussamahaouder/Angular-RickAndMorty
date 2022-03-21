@@ -1,0 +1,34 @@
+<div style=" display: flex ;align-items: center; justify-content: center;">
+  <h1>Search characters</h1>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="getCarac()"  style="display: flex; align-items: center; justify-content: center;">
+  <mat-form-field  appearance="fill"  >
+      <mat-label>characters name</mat-label>
+      <input matInput type="text" formControlName="name" required matInput>
+     
+      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="''" >
+        <mat-icon>close</mat-icon>
+      </button>
+  </mat-form-field> 
+  <button type="submit" mat-button > Search </button>
+</form>
+
+<div class="divis" *ngFor="let carac of resultat">
+<mat-card *ngIf="carac.status == 'Alive'">
+  <mat-card-header>
+    <mat-card-header>
+      <mat-card-title>
+        {{carac.name}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{carac.status}}
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card-header>
+  <mat-card-content>
+    
+    <img mat-card-image src="{{carac.image}}"  >
+  </mat-card-content>
+</mat-card>
+</div>
